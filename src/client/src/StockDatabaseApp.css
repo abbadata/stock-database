@@ -1,0 +1,183 @@
+.inline {
+    display: inline-block;
+}
+
+.error {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 120%;
+}
+
+.message {
+    background-color: #0000ff;
+    color: #ffffff;
+    font-size: 120%;
+}
+
+.ticker-autocomplete {
+    width: 100px;
+    margin-right: 10px;
+}
+
+#stock-entry {
+    text-transform:uppercase;
+}
+
+.ticker-input {
+    margin-right: 10px;
+    width: 110px;
+}
+
+.companyname-input {
+    width: 300px;
+}
+
+.exchange-input {
+    width: 70px;
+    margin-right: 10px;
+}
+
+.ipoyear-input {
+    width: 70px;
+    margin-right: 10px;
+}
+
+.sector-create-input {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.sector-input {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.sector-filter-input {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.industry-input {
+    width: 300px;
+    margin-right: 10px;
+}
+.keyword-input {
+    width: 500px;
+    margin-right: 10px;
+}
+
+.even {
+    background-color: #cccccc;
+}
+.odd {
+    background-color: #ffffff;
+}
+
+.row-item {
+    display: flex;
+    padding: 0px 0px;
+}
+
+.grow {
+    flex-grow: 1;
+}
+.nogrow {
+    flex-grow: 0;
+}
+
+.industry-row {
+    margin-left: 30px;
+}
+.hoverchange:hover {
+    background-color: #888;
+}
+
+.tiny-button {
+    height: 24px;
+    line-height: 24px;
+    padding-right: 20px;
+    margin-left: 0.2rem;
+    text-align: center;
+}
+
+.marginleft30 {
+    margin-left: 30px;
+}
+
+.industry-add {
+    height: 24px;
+    line-height: 24px;
+    background-color: #fff;
+    vertical-align: baseline;
+}
+
+input.entry-box {
+    height: 24px !important;
+    line-height: 30px;
+    border:1px solid !important;
+    border-color: #000;
+    vertical-align: baseline;
+}
+
+.buttonhover {
+    cursor:pointer;
+}
+
+.ticker-fixed {
+    width: 120px;
+    white-space: nowrap;
+}
+.keyword-fixed {
+    width: 180px;
+    white-space: nowrap;
+}
+
+.navblack {
+    color: #000;
+}
+
+#pending {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    height: 10px;
+    background-color:black;
+    opacity: 0.2;
+}
+
+.addindustry-button {
+    font-weight: bold;
+    border-radius: 5px;
+    border: 3px solid #000000;
+    height: 30px;
+    cursor:pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.notfound {
+    color: red;
+}
+
+.autocomplete-checkbox-div {
+    margin-left: 10px;
+    margin-top: -20px;
+}
+
+.keyword-filter-input {
+    width: 210px;
+    margin-right: 5px;
+}
+
+.filter-label {
+    width: 150px;
+}
+
+.contains-select {
+    margin-right: 20px;
+}
+.button-indent {
+    margin-left: 20px;
+}
