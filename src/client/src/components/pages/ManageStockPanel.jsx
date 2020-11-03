@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, TextInput, Textarea, Select, Chip, Icon } from 'react-materialize';
-import { loadStock, fetchAllSectors, saveStock } from "../util/RestClient";
+import { loadStock, fetchAllSectors, saveStock, deleteStock } from "../util/RestClient";
 import { useHistory } from "react-router-dom";
 import { PATH_STOCKLIST } from "../../Constants";
 import ErrorDisplay from "../parts/ErrorDisplay";
@@ -116,6 +116,10 @@ const ManageStockPanel = ({ match: { params } }) => {
         })
         history.push(PATH_STOCKLIST);
     }
+    const handleClickDeleteStock = () => {
+        deleteStock(dispatch, editTicker);
+        history.push(PATH_STOCKLIST);
+    }
 
     const editStock = (ticker) => {
         return dispatch => {
@@ -136,6 +140,26 @@ const ManageStockPanel = ({ match: { params } }) => {
         })
     }
 
+    const getDeleteButtonHtml = () => {
+        if (updateMode === 'EDIT') {
+            return (
+                <Button
+                    node="button"
+                    style={{
+                        marginRight: '5px'
+                    }}
+                    onClick={handleClickDeleteStock}
+                    className="inline"
+                >
+                    DELETE TICKER {editTicker}
+                </Button>
+            )
+        }
+        else {
+            return (<div></div>);
+        }
+
+    }
 
     let industryListInCurrentSector = [];
     allSectors.forEach((sector, index) => {
@@ -285,6 +309,7 @@ const ManageStockPanel = ({ match: { params } }) => {
             >
                 {updateMode === 'EDIT' ? 'SAVE UPDATE' : 'CREATE TICKER'}
             </Button>
+            {getDeleteButtonHtml()}
             <Button
                 node="button"
                 style={{
