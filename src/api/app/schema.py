@@ -33,12 +33,6 @@ sector_schema = SectorSchema()
 sectors_schema = SectorSchema(many=True)
 
 
-
-
-# Was getting this error when Stock class is defined below this
-# sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Keyword->keyword, expression 'Stock' failed
-# to locate a name ('Stock'). If this is a class name, consider adding this relationship() to the
-# <class '__main__.Keyword'> class after both dependent classes have been defined.
 class KeywordSchema(ma.SQLAlchemySchema):
     class Meta:
         model = Keyword
