@@ -1,0 +1,8 @@
+python-dotenv
+flask
+flask-sqlalchemy
+flask-restful
+flask-marshmallow
+flask-cors
+marshmallow-sqlalchemy
+mysql-connector-python
