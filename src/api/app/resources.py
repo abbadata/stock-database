@@ -13,6 +13,16 @@ class StockByTickerResource(Resource):
         stock = Stock.query.filter(Stock.ticker == ticker).first()
         return stock_schema.dump(stock)
 
+    def delete(self, ticker):
+        stock = Stock.query.filter(Stock.ticker == ticker).first()
+        if stock:
+            db.session.delete(stock)
+            db.session.commit()
+            return '', 204
+        else:
+            return '', 404
+
+
     def put(self, ticker):
         stock = Stock.query.filter(Stock.ticker == ticker).first()
 
