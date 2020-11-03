@@ -156,7 +156,7 @@ const ManageStockPanel = ({ match: { params } }) => {
             )
         }
         else {
-            return (<div></div>);
+            return (<div className="inline"></div>);
         }
 
     }

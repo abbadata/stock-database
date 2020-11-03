@@ -80,6 +80,7 @@ export default function stockReducer(state = initialState, action) {
 
         case "SAVE_STOCK_PENDING":
             return { ...state, pending: 1 }
+        case "DELETE_STOCK_SUCCESS":
         case "SAVE_STOCK_SUCCESS":
             {
                 let data = action.payload.stockdetails;
