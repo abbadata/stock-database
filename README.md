@@ -10,12 +10,12 @@ I use it to look up stocks quickly based on Sector/Industry, Keywords, notes, an
 $ cd src/api
 $ python -m venv venv
 $ source venv/bin/activate
-$ pip -r requirements.txt
+$ pip install -r requirements.txt
 ```
 Edit .env . Set "SQLALCHEMY_DATABASE_URI" to point to your database of choice.<br>
 FLASK_HOST and FLASK_PORT can be changed as well. By default it runs on port 5000 and binds to all IP addresses of the host.
 ```
-$ python stocks.py
+$ python run.py
 ```
 The schema will be created automatically.
 
@@ -37,7 +37,9 @@ npm install
 npm run build (all assets will be in build/)
 ```
 
-If Flask is not at the default location (http://localhost:5000), edit .env to point to the right place before starting/building the web client.
+Note that the web client communicates with the REST server directly from the browser, so make sure the browser can access the server specified
+in .env: `REACT_APP_REST_SERVER="http://localhost:5000"`
+If Flask is not running at the default location (http://localhost:5000), edit .env to point to the right place before starting/building the web client.
 
 
 # Fields 

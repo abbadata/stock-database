@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)
 
-db.create_all()
-
 from .routes import initialize_routes
 initialize_routes(api)
+
+db.create_all()
