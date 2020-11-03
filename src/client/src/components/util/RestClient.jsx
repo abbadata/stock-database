@@ -53,9 +53,19 @@ export const loadStock = (dispatch, ticker, { onSuccessHandler = null, onFailure
         let errortext = error.response ? `${error.response.status} ${error.response.data}` : error.toString();
         dispatch({ type: "LOAD_STOCK_FAILURE", payload: { error: errortext } });
         if (onFailureHandler) onFailureHandler();
-    });;
+    });
 };
 
+export const deleteStock = (dispatch, ticker) => {
+    dispatch({ type: "DELETE_STOCK_PENDING" });
+    axios.delete(process.env.REACT_APP_REST_SERVER + '/stocks/ticker/' + ticker).then(response => {
+        dispatch({ type: "DELETE_STOCK_SUCCESS", payload: { ticker: ticker } });
+    }).catch(error => {
+        let errortext = error.response ? `${error.response.status} ${error.response.data}` : error.toString();
+        dispatch({ type: "DELETE_STOCK_FAILURE", payload: { error: errortext } });
+    });;
+
+}
 
 export const fetchAllSectors = (dispatch) => {
     dispatch({ type: "FETCH_ALL_SECTORS_PENDING" });

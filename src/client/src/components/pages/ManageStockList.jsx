@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Row, Col, Collection, CollectionItem, Icon, Pagination, Collapsible, CollapsibleItem, Toast } from 'react-materialize';
 import TickerInputForm from "../parts/TickerInputForm";
-import { fetchFilterStocks } from "../util/RestClient";
+import { fetchFilterStocks, deleteStock } from "../util/RestClient";
 import { useHistory } from "react-router-dom";
 import { PATH_STOCK } from "../../Constants";
 import { Link } from 'react-router-dom'
@@ -17,6 +17,7 @@ const ManageStockList = () => {
     const tickerSymbolOptions = useSelector((state) => state.stockList.tickerSymbolOptions);
 
     const allStocks = useSelector((state) => state.stockList.list);
+
     const currentPage = useSelector(state => state.stockList.currentPage);
     const currentLimit = useSelector(state => state.stockList.currentLimit);
 
@@ -55,6 +56,9 @@ const ManageStockList = () => {
         currentIndustryId, currentSectorId, currentKeywordId, currentDescriptionOperation, currentDescriptionText,
         currentNotesOperation, currentNotesText, currentCompanyNameOperation, currentCompanyNameText]);
 
+    const handleDeleteStock = (ticker) => {
+        deleteStock(dispatch, ticker);
+    }
     const handleEditStock = (ticker) => {
         dispatch({
             type: "EDIT_STOCK",
@@ -137,6 +141,11 @@ const ManageStockList = () => {
                                             </div>
                                             <div className="inline grow">
                                                 {stock.name}
+                                            </div>
+                                            <div className="inline" onClick={() => handleDeleteStock(stock.ticker)}>
+                                                <Icon tiny className="buttonhover">
+                                                    delete
+                                                </Icon>
                                             </div>
                                             <div className="inline" onClick={() => handleEditStock(stock.ticker)}>
                                                 <Link to={PATH_STOCK + "/" + stock.ticker} className="navblack">

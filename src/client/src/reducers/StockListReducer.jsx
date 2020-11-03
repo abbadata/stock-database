@@ -142,6 +142,14 @@ export default function stockListReducer(state = initialState, action) {
             return {
                 ...state, current: { ...state.filter }
             }
+        case "DELETE_STOCK_PENDING":
+            return { ...state, pending: 1 }
+        case "DELETE_STOCK_SUCCESS":
+            let newList = state.list.filter((e) => { return (e.ticker !== action.payload.ticker); })
+            return { ...state, pending: 0, list: newList }
+        case "DELETE_STOCK_FAILURE":
+            return { ...state, pending: 0, error: action.payload.error }
+
         case "FETCH_ALL_STOCKS_SUCCESS":
             let stocks = action.payload.stocks;
             let total = action.payload.total;
