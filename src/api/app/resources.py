@@ -322,7 +322,7 @@ class IndustryResource(Resource):
 
 class KeywordListResource(Resource):
     def get(self):
-        keywords = Keyword.query.all()
+        keywords = Keyword.query.order_by(Keyword.keyword.asc()).all()
         return keywords_schema.dump(keywords)
 
     def post(self):
