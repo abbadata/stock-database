@@ -19,7 +19,7 @@ const StockDatabaseApp = () => {
         <div>
             <Navbar
                 alignLinks="left"
-                brand={<div>Simple Stock Database</div>}
+                brand={<div>Simple Stock DB</div>}
                 centerChildren
                 id="mobile-nav"
                 menuIcon={<Icon>menu</Icon>}
