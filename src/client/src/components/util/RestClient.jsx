@@ -211,6 +211,11 @@ export const saveStock = (dispatch, stock, { onSuccessHandler = null, onFailureH
 
 export const addKeyword = (dispatch, keyword) => {
     dispatch({ type: "ADD_KEYWORD_PENDING" });
+    keyword = keyword.trim();
+    if (keyword === "") {
+        dispatch({ type: "ADD_KEYWORD_FAILURE", payload: { error: "Keyword can not be blank." } });
+        return;
+    }
     const createbody = { keyword: keyword };
     axios.post(process.env.REACT_APP_REST_SERVER + '/keywords', createbody).then(response => {
         let keyword = response.data;
