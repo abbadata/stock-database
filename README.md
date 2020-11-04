@@ -13,11 +13,12 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 Edit .env . Set "SQLALCHEMY_DATABASE_URI" to point to your database of choice.<br>
+By default, this will refer to a local sqlite database.<br>
 FLASK_HOST and FLASK_PORT can be changed as well. By default it runs on port 5000 and binds to all IP addresses of the host.
 ```
 $ python run.py
 ```
-The schema will be created automatically.
+The schema will be created automatically assuming it doesn't exist already.
 
 I'd suggest populating the database automatically by scraping Yahoo finance or some other financial portal.<br>
 However, everything can be entered manually as well.
