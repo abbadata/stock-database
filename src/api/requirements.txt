@@ -6,4 +6,3 @@ flask-marshmallow
 flask-cors
 marshmallow-sqlalchemy
 mysql-connector-python
-gunicorn

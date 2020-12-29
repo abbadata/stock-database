@@ -13,7 +13,9 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)
 
-from .routes import initialize_routes
-initialize_routes(api)
+if True:
+    # linter was moving import. Temporary fix
+    from .routes import initialize_routes
+    initialize_routes(api)
 
 db.create_all()
