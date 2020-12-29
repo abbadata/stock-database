@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 load_dotenv()
-from app import app
 import os
+from app import app
 
-app.run(host=os.getenv("FLASK_HOST"), port=os.getenv("FLASK_PORT"), debug=True)
+
+app.run(host=os.getenv("FLASK_HOST"), port=os.environ.get(
+    'PORT', os.getenv("FLASK_PORT")), debug=True)
