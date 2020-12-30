@@ -1,7 +1,7 @@
 # Simple Stock Database
 
 A simple responsive stock ticker symbol database.<br>
-Demo at http://base.abbadata.com:8000/<br>
+Demo at https://sample-stock-database.herokuapp.com/ . (Hosted on free tier, so can take up to 30 seconds to spin up on the first request.)<br>
 I use it to look up stocks quickly based on Sector/Industry, Keywords, notes, and description.
 
 # Installing and Running
